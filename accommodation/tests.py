@@ -1,4 +1,5 @@
 from django.test import TestCase
+<<<<<<< HEAD
 import json
 
 from user.models   import User
@@ -148,3 +149,7 @@ class AccommodationDetail(TestCase):
         UserCoupon.objects.all().delete()
         AccommodationPayment.objects.all().delete()
         PaymentMethod.objects.all().delete()
+=======
+
+# Create your tests here.
+>>>>>>> 4aaed4f... Add: Accommodation 숙소디테일 API 구현, 유닛테스트 완료

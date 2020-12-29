@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import json
 from django.shortcuts import render
 from django.views     import View
@@ -125,4 +126,6 @@ class AccommodationDetailView(View):
         except Accommodation.DoesNotExist:
             return JsonResponse({'message': 'ACCOMMODATION_NOT_FOUND'}, status = 404)
         
+=======
+>>>>>>> 4aaed4f... Add: Accommodation 숙소디테일 API 구현, 유닛테스트 완료
 
