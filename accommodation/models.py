@@ -24,7 +24,7 @@ class Accommodation(models.Model):
     check_out                 = models.DateField()
     address                   = models.CharField(max_length=100)
     is_immediate_confirmation = models.BooleanField(default=False)
-    host                      = models.ForeignKey('Host', on_delete=models.CASCADE)
+    host                      = models.ForeignKey('Host', on_delete=models.CASCADE, null=True)
     accommodation_service     = models.ManyToManyField('FreeService', through='AccommodationService')
     accommodation_facility    = models.ManyToManyField('SharedFacility', through='AccommodationFacility')
     accommodation_dormitory   = models.ManyToManyField('Dormitory', through='AccommodationDormitory')
@@ -54,7 +54,7 @@ class RoomType(models.Model):
     maximum             = models.IntegerField(default=2)
     number_of_bed       = models.IntegerField(default=1)
     minimum_reservation = models.IntegerField(default=1)
-    image_url           = models.CharField(max_length=2000)
+    image_url           = models.CharField(max_length=2000, null=True)
     accommodation       = models.ForeignKey('Accommodation', on_delete=models.CASCADE) 
     room_type_amenity   = models.ManyToManyField('RoomAmenity', through='RoomTypeAmenity')
 
@@ -77,7 +77,7 @@ class AccommodationImage(models.Model):
 
 class FreeService(models.Model):
     name      = models.CharField(max_length=45)
-    image_url = models.CharField(max_length=2000)
+    image_url = models.CharField(max_length=2000, null=True)
 
     class Meta:
         db_table = 'free_services'
@@ -91,7 +91,7 @@ class AccommodationService(models.Model):
 
 class SharedFacility(models.Model):
     name      = models.CharField(max_length=45)
-    image_url = models.CharField(max_length=2000)
+    image_url = models.CharField(max_length=2000, null=True)
 
     class Meta:
         db_table = 'shared_facilities'
