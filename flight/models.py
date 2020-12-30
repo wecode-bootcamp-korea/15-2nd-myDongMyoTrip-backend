@@ -37,18 +37,18 @@ class DetailedPrice(models.Model):
         db_table = 'detailed_prices'
 
 class Flight(models.Model):
-    airline           = models.ForeignKey(Airline, on_delete=models.CASCADE)
-    number            = models.CharField(max_length=45)
-    departure_airport = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name='departure')
-    arrival_airport   = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name='arrival')
-    departure_time    = models.TimeField()
-    arrival_time      = models.TimeField()
-    departure_date    = models.DateField()
-    arrival_date      = models.DateField()
-    seat_class        = models.ForeignKey(SeatClass, on_delete=models.CASCADE)
-    remain_seat       = models.IntegerField(default=9)
-    total_price       = models.DecimalField(max_digits=10, decimal_places=2)
-    detailed_price    = models.ForeignKey(DetailedPrice, on_delete=models.CASCADE)
+    airline              = models.ForeignKey(Airline, on_delete=models.CASCADE)
+    number               = models.CharField(max_length=45)
+    departure_airport    = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name='departure')
+    arrival_airport      = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name='arrival')
+    departure_time       = models.TimeField()
+    arrival_time         = models.TimeField()
+    departure_date       = models.DateField()
+    arrival_date         = models.DateField()
+    seat_class           = models.ForeignKey(SeatClass, on_delete=models.CASCADE)
+    remain_seat          = models.IntegerField(default=9)
+    total_price          = models.DecimalField(max_digits=10, decimal_places=2)
+    detailed_price       = models.ForeignKey(DetailedPrice, on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'flights'
