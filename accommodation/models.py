@@ -24,6 +24,7 @@ class Accommodation(models.Model):
     check_out                 = models.DateField()
     address                   = models.CharField(max_length=100)
     is_immediate_confirmation = models.BooleanField(default=False)
+    host                      = models.ForeignKey('Host', on_delete=models.CASCADE)
     accommodation_service     = models.ManyToManyField('FreeService', through='AccommodationService')
     accommodation_facility    = models.ManyToManyField('SharedFacility', through='AccommodationFacility')
     accommodation_dormitory   = models.ManyToManyField('Dormitory', through='AccommodationDormitory')
@@ -31,6 +32,13 @@ class Accommodation(models.Model):
 
     class Meta:
         db_table = 'accommodations'
+
+class Host(models.Model):
+    name      = models.CharField(max_length=45)
+    image_url = models.CharField(max_length=2000)
+
+    class Meta:
+        db_table = 'hosts'
 
 class RoomAmenity(models.Model):
     name = models.CharField(max_length=45)
