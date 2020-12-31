@@ -4,7 +4,7 @@ class Region(models.Model):
     name = models.CharField(max_length=45)
 
     class Meta:
-        db_talbe = 'regions'
+        db_table = 'regions'
 
 class Airport(models.Model):
     name   = models.CharField(max_length=45)
@@ -28,13 +28,13 @@ class SeatClass(models.Model):
         db_table = 'seat_classes'
 
 class DetailedPrice(models.Model):
-    base_fare              = models.DecialField(max_digits=10, decimal_places=2)
-    fuel_surcharge         = models.DecialField(max_digits=10, decimal_places=2, default=0)
-    tax_and_utility_charge = models.DecialField(max_digits=10, decimal_places=2, default=8000)
-    service_fee            = models.DecialField(max_digits=10, decimal_places=2, default=0)
+    base_fare              = models.DecimalField(max_digits=10, decimal_places=2)
+    fuel_surcharge         = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    tax_and_utility_charge = models.DecimalField(max_digits=10, decimal_places=2, default=8000)
+    service_fee            = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 
     class Meta:
-        db_table = 'detailed_price'
+        db_table = 'detailed_prices'
 
 class Flight(models.Model):
     airline           = models.ForeignKey(Airline, on_delete=models.CASCADE)
@@ -47,7 +47,7 @@ class Flight(models.Model):
     arrival_date      = models.DateField()
     seat_class        = models.ForeignKey(SeatClass, on_delete=models.CASCADE)
     remain_seat       = models.IntegerField(default=9)
-    total_price       = models.DecialField(max_digits=10, decimal_places=2)
+    total_price       = models.DecimalField(max_digits=10, decimal_places=2)
     detailed_price    = models.ForeignKey(DetailedPrice, on_delete=models.CASCADE)
 
     class Meta:
@@ -69,7 +69,7 @@ class PassengerInformation(models.Model):
     name        = models.CharField(max_length=45)
     gender      = models.ForeignKey(Gender, on_delete=models.CASCADE)
     nationality = models.ForeignKey(Nationality, on_delete=models.CASCADE)
-    birth_date  = DateField()
+    birth_date  = models.DateField()
 
     class Meta:
         db_table = 'passenger_informations'
@@ -87,7 +87,7 @@ class Payment(models.Model):
         db_table = 'payments'
 
 class FlightBookingInformation(models.Model):
-    user                     = models.ForeignKey(user.User, on_delete=models.CASCADE)
+    user                     = models.ForeignKey('user.User', on_delete=models.CASCADE)
     flight                   = models.ForeignKey(Flight, on_delete=models.CASCADE)
     phone_number             = models.CharField(max_length=45)
     passenger_information    = models.ForeignKey(PassengerInformation, on_delete=models.CASCADE)
