@@ -1,0 +1,6 @@
+id,name,price,description,number_of_guest,star_rating,check_in,check_out,address,host_id
+1,김김이,214000,Mollitia eveniet nisi quis laboriosam perspiciatis.,6,2,2021-01-31,2021-01-31,충청북도 수원시 장안구 석촌호수로 (서영김동),1
+2,(유) 김류윤,435000,Illo officiis velit eligendi.,6,5,2021-01-18,2021-01-22,전라북도 성남시 역삼959길 (서현김동),3
+3,주식회사 전한박,130000,Eaque quas maxime et modi quia architecto commodi.,3,1,2021-01-21,2021-01-27,강원도 평창군 반포대길 (정순김강면),2
+4,주하박,424000,Adipisci accusamus aliquid quos.,1,2,2021-01-25,2021-01-21,대구광역시 강남구 강남대길,4
+5,(주) 조,42000,Error placeat aliquid voluptate.,6,5,2021-01-11,2021-01-08,서울특별시 서초구 영동대길,5
