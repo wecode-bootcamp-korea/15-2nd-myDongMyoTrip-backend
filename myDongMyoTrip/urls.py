@@ -1,9 +1,9 @@
-<<<<<<< HEAD
+
 from django.urls import path, include
 
 urlpatterns = [
     path('user', include('user.urls')),
-=======
+
 """myDongMyoTrip URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -23,5 +23,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('flight', include('flight.urls')),
->>>>>>> ca2b5b0 (Add: Flight 앱 생성, 카테고리 API 구현, 항공권 리스트 구현, 유닛 테스트 완료)
+    path('accommodation', include('accommodation.urls')),
 ]

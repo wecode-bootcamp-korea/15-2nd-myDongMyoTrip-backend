@@ -173,10 +173,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='accommodation',
             name='host',
-<<<<<<< HEAD:accommodation/migrations/0002_auto_20210103_1250.py
             field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='accommodation.host'),
-=======
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='accommodation.host'),
->>>>>>> ca2b5b0 (Add: Flight 앱 생성, 카테고리 API 구현, 항공권 리스트 구현, 유닛 테스트 완료):accommodation/migrations/0002_auto_20210102_0210.py
         ),
     ]

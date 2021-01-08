@@ -83,7 +83,6 @@ WSGI_APPLICATION = 'myDongMyoTrip.wsgi.application'
 
 DATABASES = DATABASES
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
