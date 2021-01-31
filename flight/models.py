@@ -36,6 +36,12 @@ class DetailedPrice(models.Model):
     class Meta:
         db_table = 'detailed_prices'
 
+class DepartureTimeRange(models.Model):
+    name = models.CharField(max_length=45)
+
+    class Meta:
+        db_table = 'departure_time_ranges'
+
 class Flight(models.Model):
     airline              = models.ForeignKey(Airline, on_delete=models.CASCADE)
     number               = models.CharField(max_length=45)
@@ -49,6 +55,7 @@ class Flight(models.Model):
     remain_seat          = models.IntegerField(default=9)
     total_price          = models.DecimalField(max_digits=10, decimal_places=2)
     detailed_price       = models.ForeignKey(DetailedPrice, on_delete=models.CASCADE)
+    departure_time_range = models.ForeignKey(DepartureTimeRange, on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'flights'
