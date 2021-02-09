@@ -28,7 +28,7 @@
 
 ## 💁‍♀️ 구현 기능
 
-Front-end
+### Front-end
 
 #### 회원가입, 로그인
 
@@ -69,7 +69,17 @@ Front-end
 
 - styled component 사용시 globalStyles.js , theme,js 를 통한 통일적인 레이아웃 구현
 
-Back-end
+### Back-end
+
+#### 로그인
+
+#### 회원가입 
+
+#### 항공권 리스트
+
+#### 숙소 리스트
+
+#### 숙소 상세 
 
 ## 🎥 영상
 
